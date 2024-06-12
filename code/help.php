@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Результат</title>
-</head>
-<body>
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+session_start();
 
-    if(isset($_POST["text"])) {
-        $text = $_POST["text"];
-        $words = str_word_count($text);
-        $characters = strlen($text);
+if (isset($_SESSION["lastname"], $_SESSION["name"], $_SESSION["age"])) {
 
-        echo "<p>Cимволов: $characters</p>";
-        echo "<p>Cлов: $words</p>";
-    }
+echo "фамилия: " . $_SESSION["lastname"] . "<br>";
+echo "имя: " . $_SESSION["name"] . "<br>";
+echo "годиков: " . $_SESSION["age"] . "<br>";
+} else {
+echo "Not found";
 }
 ?>
-</body>
-</html>
