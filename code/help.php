@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-if (isset($_SESSION["lastname"], $_SESSION["name"], $_SESSION["age"])) {
-
-echo "фамилия: " . $_SESSION["lastname"] . "<br>";
-echo "имя: " . $_SESSION["name"] . "<br>";
-echo "годиков: " . $_SESSION["age"] . "<br>";
-} else {
-echo "Not found";
+if(isset($_SESSION['userData'])) {
+    echo '<ul>';
+    foreach ($_SESSION['userData'] as $key => $value) {
+        echo "<li>$key: $value</li>";
+    }
+    echo '</ul>';
 }
+else echo "not found";
 ?>
