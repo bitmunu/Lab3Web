@@ -1,18 +1,14 @@
-#task 1.1
-$str = 'ahb acb aeb aeeb adcb axeb';
-$regexp = '/a.{2}b/u';
-$matches = array();
-$result = preg_match_all($regexp, $str, $matches);
-var_dump($matches);
-
-#task 1.2
-$matches2 = array();
-$str2 = 'a1b2c3';
-$regexp2 = '/[0-9]+/u';
-
-$result2 = preg_replace_callback($regexp2,
-    function ($matches2) {
-        return pow((int)$matches2[0], 3);
-    },
-    $str2);
-echo $result2;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text</title>
+</head>
+<body>
+<form method="post" action="help.php">
+    <textarea name="text" rows="4"></textarea>
+    <input type="submit" value="result">
+</form>
+</body>
+</html>
