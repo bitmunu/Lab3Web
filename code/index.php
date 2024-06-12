@@ -2,13 +2,19 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $surname = $_POST["lastname"];
+
     $name = $_POST["name"];
     $age = $_POST["age"];
+    $salary = $_POST["salary"];
+    $number = $_POST["number"];
+    $userData = [
+        'name' => $name,
+        'age' => $age,
+        'salary' => $salary,
+        'number' => $number
+    ];
 
-    $_SESSION["lastname"] = $surname;
-    $_SESSION["name"] = $name;
-    $_SESSION["age"] = $age;
+    $_SESSION['userData'] = $userData;
 
     header("Location: help.php");
     exit();
@@ -27,14 +33,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
 
 <form method="post">
-    <label for="surname">фамилия:</label>
-    <input type="text" id="lastname" name="lastname" required><br><br>
-    <label for="name">имя:</label>
-    <input type="text" id="name" name="name" required><br><br>
-    <label for="age">годиков:</label>
-    <input type="number" id="age" name="age" required><br><br>
 
-    <input type="submit" value="Отправить">
+<label for="name">name:</label><br>
+<input type="text" id="name" name="name"><br>
+
+<label for="age">age:</label><br>
+<input type="text" id="age" name="age"><br>
+
+<label for="salary">salary:</label><br>
+<input type="text" id="salary" name="salary"><br>
+
+<label for="number">number:</label><br>
+<input type="text" id="number" name="number"><br>
+
+<input type="submit" value="submit">
+
 </form>
 
 </body>
